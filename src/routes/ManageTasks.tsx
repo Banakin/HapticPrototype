@@ -1,7 +1,7 @@
 function ManageTasks() {
     return (
         <>
-            <p>Example</p>
+            <p>Manage</p>
         </>
     );
 }

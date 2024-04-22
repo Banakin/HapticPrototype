@@ -1,7 +1,7 @@
 function Leaderboard() {
     return (
         <>
-            <p>Example</p>
+            <p>Leaderboard</p>
         </>
     );
 }

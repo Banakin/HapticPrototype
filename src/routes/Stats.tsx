@@ -1,5 +1,5 @@
 function Stats() {
-    return <p>Example</p>;
+    return <p>Stats</p>;
 }
 
 export default Stats;

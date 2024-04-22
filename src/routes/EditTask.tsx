@@ -1,5 +1,5 @@
 function EditTask() {
-    return <p>Example</p>;
+    return <p>Edit</p>;
 }
 
 export default EditTask;

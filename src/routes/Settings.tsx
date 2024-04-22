@@ -1,7 +1,7 @@
 function Settings() {
     return (
         <>
-            <p>Example</p>
+            <p>Settings</p>
         </>
     );
 }
