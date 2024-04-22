@@ -1,7 +1,9 @@
+import Title from '@/components/title';
+
 function Home() {
     return (
         <>
-            <p>Home</p>
+            <Title>Today</Title>
         </>
     );
 }

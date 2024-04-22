@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.scss';
+import '@/styles/App.scss';
 
-import Home from './routes/Home';
-import ManageTasks from './routes/ManageTasks';
-import Leaderboard from './routes/Leaderboard';
-import Settings from './routes/Settings';
-import Stats from './routes/Stats';
-import Edit from './routes/EditTask';
+import Home from '@/routes/Home';
+import ManageTasks from '@/routes/ManageTasks';
+import Leaderboard from '@/routes/Leaderboard';
+import Settings from '@/routes/Settings';
+import Stats from '@/routes/Stats';
+import Edit from '@/routes/EditTask';
 
-import { Navbar, NavbarItem } from './components/navbar';
+import { Navbar, NavbarItem } from '@/components/navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faGear, faPenToSquare, faMedal } from '@fortawesome/free-solid-svg-icons';
 

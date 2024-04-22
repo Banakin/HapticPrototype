@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
-import '../styles/navbar.scss';
+import '@/styles/navbar.scss';
 
 // Navbar
 type NavbarProps = { children: React.ReactNode };
