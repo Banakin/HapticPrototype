@@ -15,14 +15,16 @@ import { faHouse, faGear, faPenToSquare, faMedal } from '@fortawesome/free-solid
 function App() {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/manage" element={<ManageTasks />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/stats/:id" element={<Stats />} />
-                <Route path="/edit/:id" element={<Edit />} />
-            </Routes>
+            <div className="page">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/manage" element={<ManageTasks />} />
+                    <Route path="/leaderboard" element={<Leaderboard />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/stats/:id" element={<Stats />} />
+                    <Route path="/edit/:id" element={<Edit />} />
+                </Routes>
+            </div>
             <Navbar>
                 <NavbarItem link="/" icon={<FontAwesomeIcon icon={faHouse} />} text="Home" />
                 <NavbarItem link="/manage" icon={<FontAwesomeIcon icon={faGear} />} text="Manage" />

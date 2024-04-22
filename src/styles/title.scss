@@ -1,0 +1,14 @@
+.title {
+    font-size: var(--font-size-xl);
+    margin: 0;
+    padding: 0;
+
+    &:after {
+        display: block;
+        margin-top: 10px;
+        content: '';
+        width: 75%;
+        height: 5px;
+        background-color: var(--text-color);
+    }
+}
