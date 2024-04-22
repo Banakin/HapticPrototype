@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+import '../styles/navbar.scss';
 
 // Navbar
 type NavbarProps = { children: React.ReactNode };
@@ -18,9 +20,10 @@ type NavbarItemProps = {
 
 export function NavbarItem(props: NavbarItemProps) {
     const { link, icon, text } = props;
+    const { pathname } = useLocation();
 
     return (
-        <Link to={link}>
+        <Link to={link} className={`item${pathname === link ? ' active' : ''}`}>
             {icon}
             <p>{text}</p>
         </Link>
