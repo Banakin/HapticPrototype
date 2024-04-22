@@ -1,7 +1,16 @@
+import { HabitContext } from '@/HabitContext';
+import Title from '@/components/title';
+import { useContext } from 'react';
+
 function ManageTasks() {
+    const { habits } = useContext(HabitContext);
+
     return (
         <>
-            <p>Manage</p>
+            <Title>Manage</Title>
+            {Array.from(habits.keys()).map((key) => {
+                return <p>{key}</p>;
+            })}
         </>
     );
 }

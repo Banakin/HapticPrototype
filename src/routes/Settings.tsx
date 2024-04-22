@@ -1,7 +1,9 @@
+import Title from '@/components/title';
+
 function Settings() {
     return (
         <>
-            <p>Settings</p>
+            <Title>Settings</Title>
         </>
     );
 }

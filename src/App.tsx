@@ -11,20 +11,29 @@ import Edit from '@/routes/EditTask';
 import { Navbar, NavbarItem } from '@/components/navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faGear, faPenToSquare, faMedal } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+
+import { Habit, YesNoHabit } from '@/classes/Habit';
+import { HabitContext } from '@/HabitContext';
 
 function App() {
+    const [habits, setHabits] = useState(new Map<string, Habit>([['test-habit', new YesNoHabit('Do thing?')]]));
+    const value = { habits, setHabits };
+
     return (
         <BrowserRouter>
-            <div className="page">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/manage" element={<ManageTasks />} />
-                    <Route path="/leaderboard" element={<Leaderboard />} />
-                    <Route path="/settings" element={<Settings />} />
-                    <Route path="/stats/:id" element={<Stats />} />
-                    <Route path="/edit/:id" element={<Edit />} />
-                </Routes>
-            </div>
+            <HabitContext.Provider value={value}>
+                <div className="page">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/manage" element={<ManageTasks />} />
+                        <Route path="/leaderboard" element={<Leaderboard />} />
+                        <Route path="/settings" element={<Settings />} />
+                        <Route path="/stats/:id" element={<Stats />} />
+                        <Route path="/edit/:id" element={<Edit />} />
+                    </Routes>
+                </div>
+            </HabitContext.Provider>
             <Navbar>
                 <NavbarItem link="/" icon={<FontAwesomeIcon icon={faHouse} />} text="Home" />
                 <NavbarItem link="/manage" icon={<FontAwesomeIcon icon={faGear} />} text="Manage" />

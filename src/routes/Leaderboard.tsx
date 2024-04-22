@@ -1,7 +1,9 @@
+import Title from '@/components/title';
+
 function Leaderboard() {
     return (
         <>
-            <p>Leaderboard</p>
+            <Title>Leaderboard</Title>
         </>
     );
 }
