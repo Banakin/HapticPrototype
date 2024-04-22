@@ -1,4 +1,5 @@
 import { HabitContext } from '@/HabitContext';
+import Button from '@/components/button';
 import Title from '@/components/title';
 import { useContext } from 'react';
 
@@ -8,6 +9,7 @@ function ManageTasks() {
     return (
         <>
             <Title>Manage</Title>
+            <Button onClick={() => {}}>Button</Button>
             {Array.from(habits.keys()).map((key) => {
                 return <p>{key}</p>;
             })}
