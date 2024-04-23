@@ -1,11 +1,18 @@
-import { ProgressBar } from '@/components/progress-display';
+import { useParams } from 'react-router-dom';
 import Title from '@/components/title';
+import { useHabits } from '@/hooks/useHabits';
+import { ProgressBar } from '@/components/progress-display';
 
 function Stats() {
+    const { habits } = useHabits();
+    const { id } = useParams();
+    const taskItem = habits.get(id!);
+
     return (
         <>
-            <Title>Stats</Title>
-            <ProgressBar value={50} />
+            <Title>{taskItem?.name}</Title>
+            <ProgressBar value={taskItem!.statistics} />
+            <p>{taskItem!.statistics}%</p>
         </>
     );
 }
