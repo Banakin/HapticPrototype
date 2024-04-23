@@ -1,7 +1,7 @@
 import { faCheck, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import '@/styles/check-select.scss';
+import '@/styles/habit-log-select.scss';
 
 type CheckSelectProps = {
     value: boolean | undefined;
@@ -12,7 +12,7 @@ function CheckSelect(props: CheckSelectProps) {
     const { value, onValueChange } = props;
 
     return (
-        <div className="checkselect">
+        <div className="habitlogselect">
             <FontAwesomeIcon
                 className={value != undefined && value ? 'selected' : ''}
                 onClick={() => onValueChange(true)}

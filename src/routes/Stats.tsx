@@ -1,5 +1,11 @@
+import Title from '@/components/title';
+
 function Stats() {
-    return <p>Stats</p>;
+    return (
+        <>
+            <Title>Stats</Title>
+        </>
+    );
 }
 
 export default Stats;

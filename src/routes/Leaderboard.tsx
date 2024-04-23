@@ -4,6 +4,7 @@ function Leaderboard() {
     return (
         <>
             <Title>Leaderboard</Title>
+            <p>Nothing here yet!</p>
         </>
     );
 }

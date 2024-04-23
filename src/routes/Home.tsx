@@ -7,6 +7,7 @@ import Button from '@/components/button';
 import { nanoid } from 'nanoid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import NumberSelect from '@/components/number-select';
 
 function Home() {
     const { habits, setHabits } = useHabits();
@@ -48,7 +49,20 @@ function Home() {
                         </ListItem>
                     );
                 } else if (item && item instanceof QuantityHabit) {
-                    return <ListItem key={key} label={item.name}></ListItem>;
+                    return (
+                        <ListItem key={key} label={item.name}>
+                            <NumberSelect
+                                value={item.data}
+                                onValueChange={(value: number) => {
+                                    // Update Value
+                                    item.data = value;
+
+                                    // Update habits
+                                    setHabits(new Map(habits.set(key, item)));
+                                }}
+                            />
+                        </ListItem>
+                    );
                 }
             })}
         </>

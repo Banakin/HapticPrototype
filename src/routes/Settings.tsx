@@ -4,6 +4,7 @@ function Settings() {
     return (
         <>
             <Title>Settings</Title>
+            <p>Nothing here yet!</p>
         </>
     );
 }
