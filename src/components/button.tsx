@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import '@/styles/button.scss';
+
 type ButtonProps = {
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;

@@ -1,0 +1,26 @@
+.button {
+    padding-bottom: 10px;
+    padding-top: 16px;
+    padding: 16px 15px 10px 15px;
+    margin: 5px 0;
+
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: var(--font-size-regular);
+    text-decoration: none;
+
+    transition: 0.25s;
+
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}

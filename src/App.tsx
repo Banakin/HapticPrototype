@@ -8,21 +8,20 @@ import Settings from '@/routes/Settings';
 import Stats from '@/routes/Stats';
 import Edit from '@/routes/EditTask';
 
-import { Navbar, NavbarItem } from '@/components/navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faGear, faPenToSquare, faMedal } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 import { Habit, YesNoHabit } from '@/classes/Habit';
 import { HabitContext } from '@/HabitContext';
+import Navigation from '@/components/navigation';
 
 function App() {
     const [habits, setHabits] = useState(new Map<string, Habit>([['test-habit', new YesNoHabit('Do thing?')]]));
     const value = { habits, setHabits };
 
     return (
-        <BrowserRouter>
-            <HabitContext.Provider value={value}>
+        <HabitContext.Provider value={value}>
+            <BrowserRouter>
+                <Navigation />
                 <div className="page">
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -33,14 +32,8 @@ function App() {
                         <Route path="/edit/:id" element={<Edit />} />
                     </Routes>
                 </div>
-            </HabitContext.Provider>
-            <Navbar>
-                <NavbarItem link="/" icon={<FontAwesomeIcon icon={faHouse} />} text="Home" />
-                <NavbarItem link="/manage" icon={<FontAwesomeIcon icon={faGear} />} text="Manage" />
-                <NavbarItem link="/leaderboard" icon={<FontAwesomeIcon icon={faPenToSquare} />} text="Leaderboard" />
-                <NavbarItem link="/settings" icon={<FontAwesomeIcon icon={faMedal} />} text="Settings" />
-            </Navbar>
-        </BrowserRouter>
+            </BrowserRouter>
+        </HabitContext.Provider>
     );
 }
 
