@@ -1,5 +1,9 @@
-.button {
-    padding: 16px 15px 10px 15px;
+.checkselect {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    padding: 10px 15px;
     margin: 5px 0;
 
     background-color: var(--primary-color);
@@ -13,12 +17,11 @@
     font-size: var(--font-size-regular);
     text-decoration: none;
 
-    transition: 0.25s;
+    svg {
+        opacity: 0.3;
 
-    display: inline-block;
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.1);
+        &.selected {
+            opacity: 1;
+        }
     }
 }

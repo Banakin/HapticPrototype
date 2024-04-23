@@ -1,0 +1,47 @@
+.formfield {
+    margin: 10px 0;
+
+    input {
+        padding-bottom: 10px;
+        padding-top: 16px;
+        padding: 16px 15px 10px 15px;
+
+        background-color: var(--primary-color);
+        color: var(--primary-text-color);
+
+        border: none;
+        border-radius: 10px;
+
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: var(--font-size-regular);
+        text-decoration: none;
+
+        display: block;
+        cursor: pointer;
+
+        &::placeholder {
+            color: var(--secondary-text-color);
+        }
+    }
+
+    select {
+        padding-bottom: 10px;
+        padding-top: 16px;
+        padding: 16px 15px 10px 15px;
+
+        background-color: var(--primary-color);
+        color: var(--primary-text-color);
+
+        border: none;
+        border-radius: 10px;
+
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: var(--font-size-regular);
+        text-decoration: none;
+
+        display: block;
+        cursor: pointer;
+    }
+}

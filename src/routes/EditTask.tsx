@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 
 import { z } from 'zod';
+import { NumberField, SelectField, TextField } from '@/components/text-fields';
 
 const EditSchema = z.object({
     name: z.string().min(1),
@@ -38,33 +39,41 @@ function EditTask() {
         <>
             <p>Edit</p>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
-                <label form="display-name">Name</label>
-                <input
+                <TextField
                     id="display-name"
-                    className="input"
+                    label="Name"
                     placeholder="Task Title"
                     defaultValue={taskItem?.name}
-                    {...register('name')}
+                    formRegister={register('name')}
+                    error={errors.name}
                 />
-                {errors.name && <span>{errors.name.message}</span>}
 
-                <label form="statistics">Statistics</label>
-                <input
+                <NumberField
                     id="statistics"
-                    type="number"
-                    className="input"
+                    label="Statistics"
                     placeholder="Statistics"
                     defaultValue={taskItem?.statistics}
-                    {...register('statistics')}
+                    formRegister={register('statistics')}
+                    error={errors.statistics}
                 />
-                {errors.statistics && <span>{errors.statistics.message}</span>}
 
-                <label form="type">Statistics</label>
-                <select id="type" defaultValue={habitType} {...register('type')}>
-                    <option value="boolean">Yes/No</option>
-                    <option value="integer">Quantity</option>
-                </select>
-                {errors.type && <span>{errors.type.message}</span>}
+                <SelectField
+                    id="type"
+                    label="Habit Type"
+                    defaultValue={habitType}
+                    formRegister={register('type')}
+                    error={errors.type}
+                    options={[
+                        {
+                            value: 'boolean',
+                            display: 'Yes/No',
+                        },
+                        {
+                            value: 'integer',
+                            display: 'Quantity',
+                        },
+                    ]}
+                />
 
                 <Button type="submit">Save</Button>
                 <Button>Delete</Button>
