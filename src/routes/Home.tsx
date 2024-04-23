@@ -2,15 +2,22 @@ import { HabitContext } from '@/HabitContext';
 import Title from '@/components/title';
 import { useContext } from 'react';
 import ListItem from '../components/list-item';
-import { YesNoHabit } from '../classes/Habit';
+import { QuantityHabit, YesNoHabit } from '../classes/Habit';
 import CheckSelect from '../components/check-select';
 
 function Home() {
     const { habits, setHabits } = useContext(HabitContext);
 
+    const NoItemsPrompt = () => {
+        if (habits.size === 0) {
+            return <h1>Bruh</h1>;
+        }
+    };
+
     return (
         <>
             <Title>Today</Title>
+            <NoItemsPrompt />
             {Array.from(habits.keys()).map((key) => {
                 const item = habits.get(key);
 
@@ -29,6 +36,8 @@ function Home() {
                             />
                         </ListItem>
                     );
+                } else if (item && item instanceof QuantityHabit) {
+                    return <ListItem key={key} label={item.name}></ListItem>;
                 }
             })}
         </>

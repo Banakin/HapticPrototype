@@ -1,14 +1,15 @@
 import { HabitContext } from '@/HabitContext';
-import { YesNoHabit } from '@/classes/Habit';
+import { QuantityHabit, YesNoHabit } from '@/classes/Habit';
 import Button from '@/components/button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { z } from 'zod';
 import { NumberField, SelectField, TextField } from '@/components/text-fields';
+import Title from '@/components/title';
 
 const EditSchema = z.object({
     name: z.string().min(1),
@@ -19,14 +20,27 @@ const EditSchema = z.object({
 type EditSchemaType = z.infer<typeof EditSchema>;
 
 function EditTask() {
-    const { habits } = useContext(HabitContext);
+    const { habits, setHabits } = useContext(HabitContext);
     const { id } = useParams();
     const taskItem = habits.get(id!);
+    const navigate = useNavigate();
 
     const habitType = taskItem instanceof YesNoHabit ? 'boolean' : 'integer';
 
     const onSubmit = async (data: EditSchemaType) => {
         console.log('SUCCESS', data);
+
+        if (data.type === 'boolean') {
+            const item = new YesNoHabit(data.name);
+            item.statistics = data.statistics;
+
+            setHabits(new Map(habits.set(id!, item)));
+        } else if (data.type === 'integer') {
+            const item = new QuantityHabit(data.name);
+            item.statistics = data.statistics;
+
+            setHabits(new Map(habits.set(id!, item)));
+        }
     };
 
     const {
@@ -37,7 +51,7 @@ function EditTask() {
 
     return (
         <>
-            <p>Edit</p>
+            <Title>Edit</Title>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                     id="display-name"
@@ -50,8 +64,8 @@ function EditTask() {
 
                 <NumberField
                     id="statistics"
-                    label="Statistics"
-                    placeholder="Statistics"
+                    label="Completion"
+                    placeholder="0 - 100"
                     defaultValue={taskItem?.statistics}
                     formRegister={register('statistics')}
                     error={errors.statistics}
@@ -76,7 +90,16 @@ function EditTask() {
                 />
 
                 <Button type="submit">Save</Button>
-                <Button>Delete</Button>
+                <Button
+                    type="button"
+                    onClick={() => {
+                        habits.delete(id!);
+                        setHabits(new Map(habits));
+                        navigate(-1);
+                    }}
+                >
+                    Delete
+                </Button>
             </form>
         </>
     );

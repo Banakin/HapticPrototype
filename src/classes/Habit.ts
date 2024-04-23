@@ -11,6 +11,10 @@ export abstract class Habit {
         return this._statistics;
     }
 
+    set statistics(percent: number) {
+        this._statistics = percent;
+    }
+
     set name(name: string) {
         this._name = name;
     }
@@ -34,6 +38,19 @@ export class YesNoHabit extends Habit {
         if (data) this._statistics = 100;
         else this._statistics = 0;
 
+        this._value = data;
+    }
+}
+
+export class QuantityHabit extends Habit {
+    _value: number | undefined = undefined;
+
+    get data(): number | undefined {
+        return this._value;
+    }
+
+    set data(data: number) {
+        this._statistics += data;
         this._value = data;
     }
 }
