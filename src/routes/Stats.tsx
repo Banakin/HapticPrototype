@@ -13,7 +13,7 @@ function Stats() {
         <>
             <Title>{taskItem?.name}</Title>
             <Card title="Progress">
-                <ProgressBar value={taskItem!.statistics} />
+                <ProgressBar value={taskItem!.statistics} size="100%" />
                 <p>{taskItem!.statistics}%</p>
             </Card>
         </>

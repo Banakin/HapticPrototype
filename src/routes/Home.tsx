@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import NumberSelect from '@/components/number-select';
+import { ProgressBar } from '@/components/progress-display';
 
 function Home() {
     const { habits, setHabits } = useHabits();
@@ -36,6 +37,7 @@ function Home() {
                 if (item && item instanceof YesNoHabit) {
                     return (
                         <ListItem key={key} label={item.name}>
+                            <ProgressBar value={item.statistics} size="100px" />
                             <CheckSelect
                                 value={item.data}
                                 onValueChange={(value: boolean) => {
@@ -51,6 +53,7 @@ function Home() {
                 } else if (item && item instanceof QuantityHabit) {
                     return (
                         <ListItem key={key} label={item.name}>
+                            <ProgressBar value={item.statistics} size="100px" />
                             <NumberSelect
                                 value={item.data}
                                 onValueChange={(value: number) => {

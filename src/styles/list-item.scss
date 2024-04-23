@@ -3,6 +3,8 @@
     flex-direction: row;
     align-items: center;
 
+    margin: 10px 0;
+
     .listitemlabel {
         // width: min-content;
         padding: 0;
@@ -14,5 +16,9 @@
         flex-direction: row;
         margin-left: auto;
         gap: 5px;
+    }
+
+    p {
+        margin: 0;
     }
 }
