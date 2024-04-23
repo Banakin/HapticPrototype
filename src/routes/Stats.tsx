@@ -1,11 +1,11 @@
-import { ProgressCirlce } from '@/components/progress-display';
+import { ProgressBar } from '@/components/progress-display';
 import Title from '@/components/title';
 
 function Stats() {
     return (
         <>
             <Title>Stats</Title>
-            <ProgressCirlce />
+            <ProgressBar value={50} />
         </>
     );
 }

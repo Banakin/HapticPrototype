@@ -1,23 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
 
 :root {
-    --black-color: #000000;
-    --white-color: #ffffff;
-    --danger-color: #f75151;
-    --success-color: #33d67e;
-    --info-color: #3fc1f9;
-    --warning-color: #e49231;
+    --black-color: 0, 0, 0;
+    --white-color: 255, 255, 255;
+    --danger-color: 247, 81, 81;
+    --success-color: 51, 214, 126;
+    --info-color: 63, 193, 249;
+    --warning-color: 228, 146, 49;
 
-    --yellow-color: #fbd037;
-    --yellow-dark-color: #bb950e;
-    --yellow-light-color: #ffea9e;
+    --yellow-color: 251, 208, 55;
+    --yellow-dark-color: 187, 149, 14;
+    --yellow-light-color: 255, 234, 158;
 
-    --background-color: var(--yellow-color);
-    --text-color: var(--black-color);
-    --primary-color: var(--yellow-dark-color);
-    --primary-text-color: var(--white-color);
-    --secondary-color: var(--yellow-light-color);
-    --secondary-text-color: var(--black-color);
+    --background-color: rgb(var(--yellow-color));
+    --text-color: rgb(var(--black-color));
+
+    --primary-color: rgb(var(--yellow-dark-color));
+    --primary-text-color: rgb(var(--white-color));
+    --primary-text-color-transparent: rgba(var(--white-color), 0.5);
+
+    --secondary-color: rgb(var(--yellow-light-color));
+    --secondary-text-color: rgb(var(--black-color));
+    --secondary-text-color-transparent: rgba(var(--black-color), 0.5);
 
     --font-size-navbar: 1.5rem;
     --font-size-navbar-icon: 1.5rem;

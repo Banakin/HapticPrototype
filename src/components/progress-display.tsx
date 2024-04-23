@@ -1,10 +1,24 @@
 import '@/styles/progress-display.scss';
 
-export function ProgressCirlce() {
-    return (
-        <svg width="250" height="250" viewBox="0 0 250 250" className="circular-progress">
-            <circle className="bg"></circle>
-            <circle className="fg"></circle>
-        </svg>
-    );
+type ProgressProps = {
+    value: number;
+    vertical?: boolean;
+};
+
+export function ProgressBar(props: ProgressProps) {
+    const { value, vertical } = props;
+
+    if (vertical) {
+        return (
+            <div className={`progressbar ${vertical ? 'progressbarvertical' : ''}`}>
+                <div className="progressbarinner" style={{ height: value + '%' }}></div>
+            </div>
+        );
+    } else {
+        return (
+            <div className={`progressbar ${vertical ? 'progressbarvertical' : ''}`}>
+                <div className="progressbarinner" style={{ width: value + '%' }}></div>
+            </div>
+        );
+    }
 }
