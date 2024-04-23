@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import '@/styles/back.scss';
+import '@/styles/back-nav.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 

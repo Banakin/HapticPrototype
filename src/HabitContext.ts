@@ -1,8 +1,8 @@
 import { createContext } from 'react';
-import { Habit, YesNoHabit } from '@/classes/Habit';
+import { Habit } from '@/classes/Habit';
 
 export const HabitContext = createContext({
-    habits: new Map<string, Habit>([['test-habit', new YesNoHabit('Do thing?')]]),
+    habits: new Map<string, Habit>(),
     setHabits: (value: Map<string, Habit>): void => {
         value;
     },

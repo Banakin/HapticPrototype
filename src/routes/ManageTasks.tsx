@@ -14,12 +14,15 @@ function ManageTasks() {
             <Button to={'/edit/' + nanoid(5)}>Add</Button>
 
             {Array.from(habits.keys()).map((key) => {
-                return (
-                    <ListItem key={key} label={key}>
-                        <Button to={'/stats/' + key}>Stats</Button>
-                        <Button to={'/edit/' + key}>Edit</Button>
-                    </ListItem>
-                );
+                const item = habits.get(key);
+
+                if (item)
+                    return (
+                        <ListItem key={key} label={item.name}>
+                            <Button to={'/stats/' + key}>Stats</Button>
+                            <Button to={'/edit/' + key}>Edit</Button>
+                        </ListItem>
+                    );
             })}
         </>
     );

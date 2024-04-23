@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { Navbar, NavbarItem } from '@/components/navbar';
-import BackNav from '@/components/backnav';
+import BackNav from '@/components/back-nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faGear, faPenToSquare, faMedal } from '@fortawesome/free-solid-svg-icons';
 
