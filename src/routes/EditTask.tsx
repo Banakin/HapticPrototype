@@ -11,6 +11,8 @@ import Title from '@/components/title';
 import { useToast } from '@/hooks/useToast';
 import { useHabits } from '@/hooks/useHabits';
 
+import '@/styles/form.scss';
+
 const EditSchema = z.object({
     name: z.string().min(1),
     statistics: z.coerce.number().min(0),
@@ -90,6 +92,8 @@ function EditTask() {
                         },
                     ]}
                 />
+
+                <Button disabled>Edit History (Coming Soon)</Button>
 
                 <Button type="submit">Save</Button>
                 <Button

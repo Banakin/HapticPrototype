@@ -7,22 +7,28 @@ type ButtonProps = {
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     to?: string;
     type?: 'button' | 'submit' | 'reset' | undefined;
+    disabled?: boolean;
 };
 
 function Button(props: ButtonProps) {
-    const { children, onClick, to, type } = props;
+    const { children, onClick, to, type, disabled } = props;
 
     if (onClick && to) throw new Error('Cannot pass both onClick and to properties at the same time.');
 
     if (to)
         return (
-            <Link className="button" to={to}>
+            <Link className={`button ${disabled ? 'disabled' : ''}`} to={to}>
                 {children}
             </Link>
         );
     else
         return (
-            <button className="button" onClick={onClick} type={type}>
+            <button
+                className={`button ${disabled ? 'disabled' : ''}`}
+                onClick={onClick}
+                type={type}
+                disabled={disabled}
+            >
                 {children}
             </button>
         );

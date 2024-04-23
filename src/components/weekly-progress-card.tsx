@@ -17,7 +17,7 @@ function WeeklyProgressCard(props: WeeklyProgressCardProps) {
                 {values.map((value, index) => {
                     return (
                         <div key={index}>
-                            <ProgressBar value={value} size="100px" vertical={true} />
+                            <ProgressBar value={value} size="100px" vertical />
                             <p>{days[index]}</p>
                         </div>
                     );

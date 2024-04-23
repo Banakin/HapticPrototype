@@ -54,7 +54,7 @@ function Leaderboard() {
             <Title>Leaderboard</Title>
             <YourProgress />
 
-            <Title small={true}>Friends</Title>
+            <Title small>Friends</Title>
             {friends.map((friend) => {
                 return (
                     <ListItem key={friend.name} label={friend.name}>
