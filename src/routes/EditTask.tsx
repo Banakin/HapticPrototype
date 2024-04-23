@@ -1,8 +1,6 @@
-import { HabitContext } from '@/HabitContext';
 import { QuantityHabit, YesNoHabit } from '@/classes/Habit';
 import Button from '@/components/button';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -10,6 +8,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { z } from 'zod';
 import { NumberField, SelectField, TextField } from '@/components/text-fields';
 import Title from '@/components/title';
+import { useToast } from '@/hooks/useToast';
+import { useHabits } from '@/hooks/useHabits';
 
 const EditSchema = z.object({
     name: z.string().min(1),
@@ -20,10 +20,11 @@ const EditSchema = z.object({
 type EditSchemaType = z.infer<typeof EditSchema>;
 
 function EditTask() {
-    const { habits, setHabits } = useContext(HabitContext);
+    const { habits, setHabits } = useHabits();
     const { id } = useParams();
     const taskItem = habits.get(id!);
     const navigate = useNavigate();
+    const toast = useToast();
 
     const habitType = taskItem instanceof YesNoHabit ? 'boolean' : 'integer';
 
@@ -96,6 +97,7 @@ function EditTask() {
                         habits.delete(id!);
                         setHabits(new Map(habits));
                         navigate(-1);
+                        toast.addToast('Task has been deleted.');
                     }}
                 >
                     Delete

@@ -1,12 +1,11 @@
-import { HabitContext } from '@/HabitContext';
 import Button from '@/components/button';
 import ListItem from '@/components/list-item';
 import Title from '@/components/title';
 import { nanoid } from 'nanoid';
-import { useContext } from 'react';
+import { useHabits } from '@/hooks/useHabits';
 
 function ManageTasks() {
-    const { habits } = useContext(HabitContext);
+    const { habits } = useHabits();
 
     return (
         <>

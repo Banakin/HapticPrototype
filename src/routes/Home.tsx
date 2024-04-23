@@ -1,12 +1,11 @@
-import { HabitContext } from '@/HabitContext';
 import Title from '@/components/title';
-import { useContext } from 'react';
-import ListItem from '../components/list-item';
-import { QuantityHabit, YesNoHabit } from '../classes/Habit';
-import CheckSelect from '../components/check-select';
+import ListItem from '@/components/list-item';
+import { QuantityHabit, YesNoHabit } from '@/classes/Habit';
+import CheckSelect from '@/components/check-select';
+import { useHabits } from '@/hooks/useHabits';
 
 function Home() {
-    const { habits, setHabits } = useContext(HabitContext);
+    const { habits, setHabits } = useHabits();
 
     const NoItemsPrompt = () => {
         if (habits.size === 0) {
