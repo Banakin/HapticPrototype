@@ -2,7 +2,7 @@ import '@/styles/title.scss';
 
 type TitleProps = {
     children: React.ReactNode;
-    small: boolean;
+    small?: boolean;
 };
 
 function Title(props: TitleProps) {

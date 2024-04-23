@@ -6,14 +6,14 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { z } from 'zod';
-import { NumberField, SelectField, TextField } from '@/components/text-fields';
+import { NumberField, SelectField, TextField } from '@/components/form-fields';
 import Title from '@/components/title';
 import { useToast } from '@/hooks/useToast';
 import { useHabits } from '@/hooks/useHabits';
 
 const EditSchema = z.object({
     name: z.string().min(1),
-    statistics: z.coerce.number().min(0).max(100),
+    statistics: z.coerce.number().min(0),
     type: z.enum(['boolean', 'integer']),
 });
 

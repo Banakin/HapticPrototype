@@ -2,6 +2,7 @@ import Card from '@/components/card';
 import ListItem from '@/components/list-item';
 import { ProgressBar } from '@/components/progress-display';
 import Title from '@/components/title';
+import randomPercent from '@/functions/randomPercent';
 import { useHabits } from '@/hooks/useHabits';
 
 function Leaderboard() {
@@ -15,23 +16,23 @@ function Leaderboard() {
     const friends = [
         {
             name: 'Emily Rodriguez',
-            progress: Math.floor(Math.random() * 100),
+            progress: randomPercent(),
         },
         {
             name: 'Marcus Johnson',
-            progress: Math.floor(Math.random() * 100),
+            progress: randomPercent(),
         },
         {
             name: 'Sofia Patel',
-            progress: Math.floor(Math.random() * 100),
+            progress: randomPercent(),
         },
         {
             name: 'Caleb Nguyen',
-            progress: Math.floor(Math.random() * 100),
+            progress: randomPercent(),
         },
         {
             name: 'Isabella Campbell',
-            progress: Math.floor(Math.random() * 100),
+            progress: randomPercent(),
         },
     ];
 
