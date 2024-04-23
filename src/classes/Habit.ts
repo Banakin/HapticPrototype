@@ -19,7 +19,6 @@ export abstract class Habit {
         return this._name;
     }
 
-    // Getters and setters
     abstract get data(): unknown;
     abstract set data(data: unknown);
 }

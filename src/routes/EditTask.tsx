@@ -1,4 +1,5 @@
 import { HabitContext } from '@/HabitContext';
+import { YesNoHabit } from '@/classes/Habit';
 import Button from '@/components/button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext } from 'react';
@@ -8,18 +9,22 @@ import { useParams } from 'react-router-dom';
 
 import { z } from 'zod';
 
-const SignUpSchema = z.object({
-    email: z.string(),
+const EditSchema = z.object({
+    name: z.string().min(1),
+    statistics: z.coerce.number().min(0).max(100),
+    type: z.enum(['boolean', 'integer']),
 });
 
-type SignUpSchemaType = z.infer<typeof SignUpSchema>;
+type EditSchemaType = z.infer<typeof EditSchema>;
 
 function EditTask() {
     const { habits } = useContext(HabitContext);
     const { id } = useParams();
     const taskItem = habits.get(id!);
 
-    const onSubmit = async (data: SignUpSchemaType) => {
+    const habitType = taskItem instanceof YesNoHabit ? 'boolean' : 'integer';
+
+    const onSubmit = async (data: EditSchemaType) => {
         console.log('SUCCESS', data);
     };
 
@@ -27,19 +32,40 @@ function EditTask() {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<SignUpSchemaType>({ resolver: zodResolver(SignUpSchema) });
+    } = useForm<EditSchemaType>({ resolver: zodResolver(EditSchema) });
 
     return (
         <>
             <p>Edit</p>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
-                <input className="input" placeholder="email" {...register('email')} />
+                <label form="display-name">Name</label>
+                <input
+                    id="display-name"
+                    className="input"
+                    placeholder="Task Title"
+                    defaultValue={taskItem?.name}
+                    {...register('name')}
+                />
+                {errors.name && <span>{errors.name.message}</span>}
 
-                {errors.email && <span>{errors.email.message}</span>}
+                <label form="statistics">Statistics</label>
+                <input
+                    id="statistics"
+                    type="number"
+                    className="input"
+                    placeholder="Statistics"
+                    defaultValue={taskItem?.statistics}
+                    {...register('statistics')}
+                />
+                {errors.statistics && <span>{errors.statistics.message}</span>}
 
-                <p>{id}</p>
-                <p>{taskItem?.name}</p>
-                <p>{taskItem?.statistics}</p>
+                <label form="type">Statistics</label>
+                <select id="type" defaultValue={habitType} {...register('type')}>
+                    <option value="boolean">Yes/No</option>
+                    <option value="integer">Quantity</option>
+                </select>
+                {errors.type && <span>{errors.type.message}</span>}
+
                 <Button type="submit">Save</Button>
                 <Button>Delete</Button>
             </form>
