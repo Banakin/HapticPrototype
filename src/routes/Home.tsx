@@ -3,13 +3,25 @@ import ListItem from '@/components/list-item';
 import { QuantityHabit, YesNoHabit } from '@/classes/Habit';
 import CheckSelect from '@/components/check-select';
 import { useHabits } from '@/hooks/useHabits';
+import Button from '@/components/button';
+import { nanoid } from 'nanoid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
     const { habits, setHabits } = useHabits();
 
     const NoItemsPrompt = () => {
         if (habits.size === 0) {
-            return <h1>Bruh</h1>;
+            return (
+                <>
+                    <p>It looks like you have no tasks!</p>
+                    <Button to={'/edit/' + nanoid(5)}>
+                        <FontAwesomeIcon icon={faPlus} />
+                        Add Task
+                    </Button>
+                </>
+            );
         }
     };
 

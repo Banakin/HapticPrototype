@@ -3,6 +3,8 @@ import ListItem from '@/components/list-item';
 import Title from '@/components/title';
 import { nanoid } from 'nanoid';
 import { useHabits } from '@/hooks/useHabits';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function ManageTasks() {
     const { habits } = useHabits();
@@ -22,7 +24,10 @@ function ManageTasks() {
                     );
             })}
 
-            <Button to={'/edit/' + nanoid(5)}>Add</Button>
+            <Button to={'/edit/' + nanoid(5)}>
+                <FontAwesomeIcon icon={faPlus} />
+                Add Task
+            </Button>
         </>
     );
 }
