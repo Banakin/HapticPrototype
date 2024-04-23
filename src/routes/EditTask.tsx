@@ -26,7 +26,7 @@ function EditTask() {
     const navigate = useNavigate();
     const toast = useToast();
 
-    const habitType = taskItem instanceof YesNoHabit ? 'boolean' : 'integer';
+    const habitType = taskItem instanceof QuantityHabit ? 'integer' : 'boolean';
 
     const onSubmit = async (data: EditSchemaType) => {
         console.log('SUCCESS', data);
