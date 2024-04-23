@@ -15,7 +15,7 @@ function App() {
     return (
         <HabitContextProvider>
             <ToastContextProvider>
-                <BrowserRouter>
+                <BrowserRouter basename={import.meta.env.BASE_URL}>
                     <div className="page">
                         <Navigation />
                         <Routes>
