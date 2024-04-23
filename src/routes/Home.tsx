@@ -18,7 +18,7 @@ function Home() {
                     <p>It looks like you have no tasks!</p>
                     <Button to={'/edit/' + nanoid(5)}>
                         <FontAwesomeIcon icon={faPlus} />
-                        Add Task
+                        Add Habit
                     </Button>
                 </>
             );

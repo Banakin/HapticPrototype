@@ -26,7 +26,7 @@ function ManageTasks() {
 
             <Button to={'/edit/' + nanoid(5)}>
                 <FontAwesomeIcon icon={faPlus} />
-                Add Task
+                Add Habit
             </Button>
         </>
     );
