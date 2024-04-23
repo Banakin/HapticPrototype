@@ -4,7 +4,7 @@ function Settings() {
     return (
         <>
             <Title>Settings</Title>
-            <p>Nothing here yet!</p>
+            <p>Made by Brendan for WPI CS 3041 - HCI</p>
         </>
     );
 }
