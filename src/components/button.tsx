@@ -6,10 +6,11 @@ type ButtonProps = {
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     to?: string;
+    type?: 'button' | 'submit' | 'reset' | undefined;
 };
 
 function Button(props: ButtonProps) {
-    const { children, onClick, to } = props;
+    const { children, onClick, to, type } = props;
 
     if (onClick && to) throw new Error('Cannot pass both onClick and to properties at the same time.');
 
@@ -21,7 +22,7 @@ function Button(props: ButtonProps) {
         );
     else
         return (
-            <button className="button" onClick={onClick}>
+            <button className="button" onClick={onClick} type={type}>
                 {children}
             </button>
         );

@@ -11,8 +11,6 @@ function ManageTasks() {
     return (
         <>
             <Title>Manage</Title>
-            <Button to={'/edit/' + nanoid(5)}>Add</Button>
-
             {Array.from(habits.keys()).map((key) => {
                 const item = habits.get(key);
 
@@ -24,6 +22,8 @@ function ManageTasks() {
                         </ListItem>
                     );
             })}
+
+            <Button to={'/edit/' + nanoid(5)}>Add</Button>
         </>
     );
 }
