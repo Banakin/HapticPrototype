@@ -11,9 +11,9 @@ function Navigation() {
         return (
             <Navbar>
                 <NavbarItem link="/" icon={<FontAwesomeIcon icon={faHouse} />} text="Home" />
-                <NavbarItem link="/manage" icon={<FontAwesomeIcon icon={faGear} />} text="Manage" />
-                <NavbarItem link="/leaderboard" icon={<FontAwesomeIcon icon={faPenToSquare} />} text="Leaderboard" />
-                <NavbarItem link="/settings" icon={<FontAwesomeIcon icon={faMedal} />} text="Settings" />
+                <NavbarItem link="/manage" icon={<FontAwesomeIcon icon={faPenToSquare} />} text="Manage" />
+                <NavbarItem link="/leaderboard" icon={<FontAwesomeIcon icon={faMedal} />} text="Leaderboard" />
+                <NavbarItem link="/settings" icon={<FontAwesomeIcon icon={faGear} />} text="Settings" />
             </Navbar>
         );
     } else {
