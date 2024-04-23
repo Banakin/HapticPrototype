@@ -9,7 +9,7 @@ function Home() {
         <>
             <Title>Today</Title>
             {Array.from(habits.keys()).map((key) => {
-                return <p>{key}</p>;
+                return <p key={key}>{key}</p>;
             })}
         </>
     );

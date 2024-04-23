@@ -21,8 +21,8 @@ function App() {
     return (
         <HabitContext.Provider value={value}>
             <BrowserRouter>
-                <Navigation />
                 <div className="page">
+                    <Navigation />
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/manage" element={<ManageTasks />} />
