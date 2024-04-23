@@ -50,7 +50,7 @@ export class QuantityHabit extends Habit {
     }
 
     set data(data: number) {
-        this._statistics += data;
+        this._statistics = data;
         this._value = data;
     }
 }
