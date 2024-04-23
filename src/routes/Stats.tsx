@@ -5,6 +5,7 @@ import { ProgressBar } from '@/components/progress-display';
 import Card from '@/components/card';
 import WeeklyProgressCard from '@/components/weekly-progress-card';
 import randomPercent from '@/functions/randomPercent';
+import YearlyProgressCard from '@/components/yearly-progress-card';
 
 function Stats() {
     const { habits } = useHabits();
@@ -29,10 +30,7 @@ function Stats() {
                 <p>{taskItem!.statistics}%</p>
             </Card>
             <WeeklyProgressCard title="Weekly Progress" values={weeklyStats} />
-            <Card title="Yearly Progress">
-                <ProgressBar value={taskItem!.statistics} size="100%" />
-                <p>{taskItem!.statistics}%</p>
-            </Card>
+            <YearlyProgressCard title="Yearly Progress" />
         </>
     );
 }
