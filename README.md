@@ -6,6 +6,8 @@ A simple Vite React app showcasing a prototype for a Habit tracking and manageme
 
 Available at https://banakin.github.io/haptic-prototype/.
 
+Designed for mobile.
+
 ## Running and building
 
 Install dependencies
