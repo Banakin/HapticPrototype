@@ -1,0 +1,22 @@
+.toasts-wrapper {
+    bottom: 75px;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+
+    .toast {
+        background-color: var(--info-color);
+        color: var(--white-color);
+
+        border: none;
+        border-radius: 10px;
+
+        font-family: inherit;
+        font-size: var(--font-size-regular);
+        text-decoration: none;
+
+        transition: 0.25s;
+        margin: 15px;
+        padding: 10px;
+    }
+}

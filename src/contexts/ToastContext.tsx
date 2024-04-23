@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useCallback, useState, createContext } from 'react';
+import '@/styles/toasts.scss';
 
 const ToastContext = createContext({
     addToast: (message: string) => {

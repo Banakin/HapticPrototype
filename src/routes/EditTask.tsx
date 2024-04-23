@@ -30,6 +30,7 @@ function EditTask() {
 
     const onSubmit = async (data: EditSchemaType) => {
         console.log('SUCCESS', data);
+        toast.addToast('Task has been saved.');
 
         if (data.type === 'boolean') {
             const item = new YesNoHabit(data.name);
