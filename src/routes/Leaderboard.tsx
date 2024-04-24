@@ -45,7 +45,7 @@ function Leaderboard() {
                 </Card>
             );
         } else {
-            return <p>It looks like you have no tasks!</p>;
+            return <p>It looks like you have no habits!</p>;
         }
     }
 

@@ -32,7 +32,7 @@ function EditTask() {
 
     const onSubmit = async (data: EditSchemaType) => {
         console.log('SUCCESS', data);
-        toast.addToast('Task has been saved.');
+        toast.addToast('Habit has been saved.');
 
         if (data.type === 'boolean') {
             const item = new YesNoHabit(data.name);
@@ -60,7 +60,7 @@ function EditTask() {
                 <TextField
                     id="display-name"
                     label="Name"
-                    placeholder="Task Title"
+                    placeholder="Habit Title"
                     defaultValue={taskItem?.name}
                     formRegister={register('name')}
                     error={errors.name}
@@ -102,7 +102,7 @@ function EditTask() {
                         habits.delete(id!);
                         setHabits(new Map(habits));
                         navigate(-1);
-                        toast.addToast('Task has been deleted.');
+                        toast.addToast('Habit has been deleted.');
                     }}
                 >
                     Delete

@@ -17,7 +17,7 @@ function Home() {
         if (habits.size === 0) {
             return (
                 <>
-                    <p>It looks like you have no tasks!</p>
+                    <p>It looks like you have no habits!</p>
                     <Button to={'/edit/' + nanoid(5)}>
                         <FontAwesomeIcon icon={faPlus} />
                         Add Habit

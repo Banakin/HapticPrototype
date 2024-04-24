@@ -12,7 +12,7 @@ function ManageTasks() {
     return (
         <>
             <Title>Manage</Title>
-            {habits.size === 0 ? <p>It looks like you have no tasks!</p> : null}
+            {habits.size === 0 ? <p>It looks like you have no habits!</p> : null}
             {Array.from(habits.keys()).map((key) => {
                 const item = habits.get(key);
 
