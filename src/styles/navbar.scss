@@ -14,7 +14,7 @@
     // iOS Navbar Safe Area
     @media all and (display-mode: fullscreen) {
         body {
-            padding-bottom: 24px;
+            padding-bottom: env(safe-area-inset-bottom);
         }
     }
 
