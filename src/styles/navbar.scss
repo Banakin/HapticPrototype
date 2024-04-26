@@ -12,7 +12,9 @@
     width: 100vw;
 
     // iOS Navbar Safe Area
-    padding-bottom: env(safe-area-inset-bottom);
+    @media all and (display-mode: fullscreen) {
+        padding-bottom: 34px;
+    }
 
     .item {
         color: inherit;
