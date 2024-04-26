@@ -12,6 +12,18 @@ dist
 dist-ssr
 *.local
 
+# Yarn
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Pwa
+/dev-dist
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
