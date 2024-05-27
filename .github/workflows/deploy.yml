@@ -43,7 +43,7 @@ jobs:
               id: pages
               uses: actions/configure-pages@v4
             - name: Build
-              run: yarn run build -- --base="${{ steps.pages.outputs.base_url }}/"
+              run: yarn run build --base="${{ steps.pages.outputs.base_url }}/"
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
