@@ -40,7 +40,7 @@ jobs:
             - name: Install dependencies
               run: yarn install --frozen-lockfile
             - name: Build
-              run: yarn run build
+              run: yarn run build -- --base="${{ steps.deployment.outputs.page_url }}/"
             - name: Setup Pages
               uses: actions/configure-pages@v4
             - name: Upload artifact
